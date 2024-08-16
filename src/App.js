@@ -16,7 +16,7 @@ function App() {
     }
 
     try{
-      const response = await api.get(`${input}/json`)
+      const response = await api.get(`${input}`)      
       setCNPJ(response.data)
       setInput("")
     }catch{
@@ -45,7 +45,7 @@ function App() {
 
       {Object.keys(cnpj).length > 0 && (
         <main className="main">
-          <h2>Razão Social: {cnpj.razao_social}</h2>
+          <h2>{cnpj.razao_social}</h2>
           <span>fundação: {cnpj.data_inicio_atividade}</span>
           <span>Situação cadastral: {cnpj.descricao_inicio_atividade}</span>
         </main>
